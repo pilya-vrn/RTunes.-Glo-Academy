@@ -1,3 +1,5 @@
+import { addZero } from './supScript.js'
+
 export const videoPlayerInit = () => {
 
     const videoPlayer = document.querySelector('.video-player');
@@ -34,8 +36,6 @@ export const videoPlayerInit = () => {
         
         toggleIcon();
     };
-
-    const addZero = n => n < 10 ? '0' + n : n;
 
     videoPlayer.addEventListener('click', togglePlay);
     videoButtonPlay.addEventListener('click', togglePlay);

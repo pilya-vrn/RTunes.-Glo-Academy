@@ -11,6 +11,7 @@ export const musicPlayerInit = () => {
     const audioProgress = document.querySelector('.audio-progress');
     const audioProgressTiming = document.querySelector('.audio-progress__timing');
     const audioTimeTotal = document.querySelector('.audio-time__total');
+    const audioVolume = document.querySelector('.audio-volume');
 
     const playlist = ['hello', 'flow', 'speed'];
 
@@ -112,4 +113,10 @@ export const musicPlayerInit = () => {
             audioButtonPlay.classList.add('fa-play');
         }
     };
+
+    audioVolume.addEventListener('input', () => {
+        audioPlayer.volume = audioVolume.value / 100;
+    });
+    audioPlayer.volume = 0.5;
+    audioVolume.value = audioPlayer.volume * 100;
 };
